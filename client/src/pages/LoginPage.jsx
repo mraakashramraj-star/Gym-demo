@@ -4,6 +4,7 @@ import { Lock, Mail, Dumbbell, AlertCircle, ArrowRight, ShieldCheck, User } from
 import { useAuth } from '../context/AuthContext.jsx';
 import { useToast } from '../context/ToastContext.jsx';
 import { gymConfig } from '../config/gymConfig.js';
+import FadeContent from '../components/common/FadeContent.jsx';
 
 export const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -53,7 +54,8 @@ export const LoginPage = () => {
 
   return (
     <div className="min-h-screen bg-[#08080a] flex items-center justify-center p-4 pt-24 pb-16">
-      <div className="max-w-md w-full bg-[#111116] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
+      <FadeContent blur={true} duration={800} threshold={0.1} className="max-w-md w-full">
+        <div className="w-full bg-[#111116] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl relative">
         
         {/* Logo & Title */}
         <div className="text-center mb-8">
@@ -174,7 +176,8 @@ export const LoginPage = () => {
           </Link>
         </div>
 
-      </div>
+        </div>
+      </FadeContent>
     </div>
   );
 };

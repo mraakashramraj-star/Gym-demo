@@ -1,0 +1,24 @@
+.scroll-float {
+  overflow: hidden;
+  display: block;
+}
+
+.scroll-float-text {
+  display: inline-block;
+}
+
+/* Default React Bits sizing when no specific text class is supplied */
+.scroll-float-text:not([class*="text-"]) {
+  font-size: clamp(1.6rem, 8vw, 10rem);
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.char {
+  display: inline-block;
+  opacity: 1;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+

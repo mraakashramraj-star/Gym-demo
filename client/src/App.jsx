@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.jsx';
 import { ToastProvider } from './context/ToastContext.jsx';
 import { Navbar } from './components/common/Navbar.jsx';
 import { Footer } from './components/common/Footer.jsx';
 import { ProtectedRoute } from './components/common/ProtectedRoute.jsx';
+import { BatronIntro } from './components/common/BatronIntro.jsx';
+import { ScrollToTop } from './components/common/ScrollToTop.jsx';
 
 // Pages
 import { HomePage } from './pages/HomePage.jsx';
@@ -26,12 +28,24 @@ import { MemberPortal } from './pages/MemberPortal.jsx';
 import { AdminDashboard } from './pages/AdminDashboard.jsx';
 
 export function App() {
+  const [introActive, setIntroActive] = useState(true);
+
+  const handleIntroComplete = () => {
+    setIntroActive(false);
+  };
+
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <AuthProvider>
         <ToastProvider>
           <div className="min-h-screen flex flex-col bg-[#08080a] text-slate-100 font-sans selection:bg-[#ff4612] selection:text-white">
             
+            {/* Full Black Intro with Liquid Metallic Batron Logo */}
+            {introActive && (
+              <BatronIntro onComplete={handleIntroComplete} />
+            )}
+
             {/* Global Sticky Responsive Navbar */}
             <Navbar />
 

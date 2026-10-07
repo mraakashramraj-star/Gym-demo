@@ -10,8 +10,13 @@ import {
 } from 'lucide-react';
 import { gymConfig } from '../config/gymConfig.js';
 import { SectionHeading } from '../components/common/SectionHeading.jsx';
+import { ScrollFloat } from '../components/common/ScrollFloat.jsx';
 import { PricingCard } from '../components/cards/PricingCard.jsx';
 import { CheckoutModal } from '../components/common/CheckoutModal.jsx';
+import FadeContent from '../components/common/FadeContent.jsx';
+import { PageHero } from '../components/common/PageHero.jsx';
+import { Lock, Award } from 'lucide-react';
+import heroFocus from '../assets/hero-focus.jpg';
 
 export const MembershipPage = () => {
   const [billingCycle, setBillingCycle] = useState('monthly');
@@ -69,51 +74,51 @@ export const MembershipPage = () => {
   ];
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pb-20">
       
       {/* Header Banner */}
-      <section className="relative py-16 bg-[#0a0a0e] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-[#ff4612] bg-[#ff4612]/15 px-3 py-1 rounded border border-[#ff4612]/30 mb-4 inline-block">
-            Investment In Yourself
-          </span>
-          <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl text-white uppercase tracking-tight">
-            MEMBERSHIP TIERS
-          </h1>
-          <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Engineered with complete transparency. Select the plan that matches your training schedule and performance ambitions.
-          </p>
-
-          {/* Billing Cycle Switcher */}
-          <div className="flex justify-center mt-10">
-            <div className="flex p-1.5 bg-[#121217] rounded-xl border border-white/10">
-              <button
-                type="button"
-                onClick={() => setBillingCycle('monthly')}
-                className={`px-6 py-2.5 text-xs font-black uppercase tracking-wider rounded-lg transition-all ${
-                  billingCycle === 'monthly'
-                    ? 'bg-[#ff4612] text-white shadow-lg shadow-[#ff4612]/30'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                Monthly Billing
-              </button>
-              <button
-                type="button"
-                onClick={() => setBillingCycle('annual')}
-                className={`px-6 py-2.5 text-xs font-black uppercase tracking-wider rounded-lg transition-all flex items-center gap-2 ${
-                  billingCycle === 'annual'
-                    ? 'bg-[#ff4612] text-white shadow-lg shadow-[#ff4612]/30'
-                    : 'text-gray-400 hover:text-white'
-                }`}
-              >
-                Annual Billing
-                <span className="text-[10px] bg-emerald-500 text-black px-2 py-0.5 rounded font-black">SAVE 15%</span>
-              </button>
-            </div>
+      <PageHero
+        badge="Investment In Yourself"
+        title="MEMBERSHIP TIERS"
+        breadcrumb="Membership"
+        subtitle="Engineered with complete transparency. Select the plan that matches your training schedule and performance ambitions."
+        bgImage={heroFocus}
+        highlights={[
+          { label: 'Zero Initiation Fees', icon: ShieldCheck },
+          { label: 'Biometric 24/7 Access', icon: Lock },
+          { label: 'Cancel Anytime Guarantee', icon: Award },
+          { label: 'Save 15% On Annual Plans', icon: Sparkles }
+        ]}
+      >
+        {/* Billing Cycle Switcher */}
+        <div className="flex justify-center">
+          <div className="flex p-1.5 bg-[#121217]/90 rounded-2xl border border-white/10 backdrop-blur-md shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setBillingCycle('monthly')}
+              className={`px-6 py-2.5 text-xs font-black uppercase tracking-wider rounded-xl transition-all ${
+                billingCycle === 'monthly'
+                  ? 'bg-[#ff4612] text-white shadow-lg shadow-[#ff4612]/30 scale-105'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              Monthly Billing
+            </button>
+            <button
+              type="button"
+              onClick={() => setBillingCycle('annual')}
+              className={`px-6 py-2.5 text-xs font-black uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 ${
+                billingCycle === 'annual'
+                  ? 'bg-[#ff4612] text-white shadow-lg shadow-[#ff4612]/30 scale-105'
+                  : 'text-gray-400 hover:text-white'
+              }`}
+            >
+              Annual Billing
+              <span className="text-[10px] bg-emerald-500 text-black px-2 py-0.5 rounded-full font-black">SAVE 15%</span>
+            </button>
           </div>
         </div>
-      </section>
+      </PageHero>
 
       {/* Pricing Cards */}
       <section className="py-16 bg-[#08080a]">
@@ -144,67 +149,71 @@ export const MembershipPage = () => {
           />
 
           {/* Desktop Table */}
-          <div className="hidden md:block overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="border-b border-white/10 text-xs font-black uppercase tracking-wider text-gray-400">
-                  <th className="py-4 px-6 w-2/5">Feature & Privilege</th>
-                  <th className="py-4 px-6 text-center w-1/5">BASIC</th>
-                  <th className="py-4 px-6 text-center w-1/5 text-[#ff4612] bg-[#ff4612]/5 rounded-t-lg">PREMIUM</th>
-                  <th className="py-4 px-6 text-center w-1/5">VIP</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-white/5 text-xs text-gray-300">
-                {comparisonFeatures.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-white/5 transition-colors">
-                    <td className="py-4 px-6 font-medium text-white">{row.name}</td>
-                    
-                    <td className="py-4 px-6 text-center">
-                      {typeof row.basic === 'boolean' ? (
-                        row.basic ? <Check className="w-4 h-4 text-[#ff4612] mx-auto" /> : <X className="w-4 h-4 text-gray-600 mx-auto" />
-                      ) : (
-                        <span className="font-semibold text-gray-400">{row.basic}</span>
-                      )}
-                    </td>
-
-                    <td className="py-4 px-6 text-center bg-[#ff4612]/5 font-bold text-white">
-                      {typeof row.premium === 'boolean' ? (
-                        row.premium ? <Check className="w-4 h-4 text-[#ff4612] mx-auto" /> : <X className="w-4 h-4 text-gray-600 mx-auto" />
-                      ) : (
-                        <span className="text-[#ff5e28] font-bold">{row.premium}</span>
-                      )}
-                    </td>
-
-                    <td className="py-4 px-6 text-center">
-                      {typeof row.vip === 'boolean' ? (
-                        row.vip ? <Check className="w-4 h-4 text-[#ff4612] mx-auto" /> : <X className="w-4 h-4 text-gray-600 mx-auto" />
-                      ) : (
-                        <span className="text-amber-400 font-bold">{row.vip}</span>
-                      )}
-                    </td>
+          <FadeContent blur={true} duration={850} threshold={0.1}>
+            <div className="hidden md:block overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-white/10 text-xs font-black uppercase tracking-wider text-gray-400">
+                    <th className="py-4 px-6 w-2/5">Feature & Privilege</th>
+                    <th className="py-4 px-6 text-center w-1/5">BASIC</th>
+                    <th className="py-4 px-6 text-center w-1/5 text-[#ff4612] bg-[#ff4612]/5 rounded-t-lg">PREMIUM</th>
+                    <th className="py-4 px-6 text-center w-1/5">VIP</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody className="divide-y divide-white/5 text-xs text-gray-300">
+                  {comparisonFeatures.map((row, idx) => (
+                    <tr key={idx} className="hover:bg-white/5 transition-colors">
+                      <td className="py-4 px-6 font-medium text-white">{row.name}</td>
+                      
+                      <td className="py-4 px-6 text-center">
+                        {typeof row.basic === 'boolean' ? (
+                          row.basic ? <Check className="w-4 h-4 text-[#ff4612] mx-auto" /> : <X className="w-4 h-4 text-gray-600 mx-auto" />
+                        ) : (
+                          <span className="font-semibold text-gray-400">{row.basic}</span>
+                        )}
+                      </td>
+
+                      <td className="py-4 px-6 text-center bg-[#ff4612]/5 font-bold text-white">
+                        {typeof row.premium === 'boolean' ? (
+                          row.premium ? <Check className="w-4 h-4 text-[#ff4612] mx-auto" /> : <X className="w-4 h-4 text-gray-600 mx-auto" />
+                        ) : (
+                          <span className="text-[#ff5e28] font-bold">{row.premium}</span>
+                        )}
+                      </td>
+
+                      <td className="py-4 px-6 text-center">
+                        {typeof row.vip === 'boolean' ? (
+                          row.vip ? <Check className="w-4 h-4 text-[#ff4612] mx-auto" /> : <X className="w-4 h-4 text-gray-600 mx-auto" />
+                        ) : (
+                          <span className="text-amber-400 font-bold">{row.vip}</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </FadeContent>
 
           {/* Mobile Comparison Cards */}
           <div className="md:hidden space-y-4">
-            {gymConfig.pricing.map(plan => (
-              <div key={plan.id} className="p-5 bg-[#121218] border border-white/10 rounded-xl">
-                <h4 className="font-heading font-black text-lg text-white uppercase mb-3 flex items-center justify-between">
-                  <span>{plan.name} Privileges</span>
-                  <span className="text-[#ff4612] text-sm">₹{plan.monthlyPrice}/mo</span>
-                </h4>
-                <ul className="space-y-2 text-xs text-gray-300">
-                  {plan.features.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="w-3.5 h-3.5 text-[#ff4612] shrink-0 mt-0.5" />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {gymConfig.pricing.map((plan, i) => (
+              <FadeContent key={plan.id} blur={true} duration={700} delay={i * 100} threshold={0.1}>
+                <div className="p-5 bg-[#121218] border border-white/10 rounded-xl">
+                  <h4 className="font-heading font-black text-lg text-white uppercase mb-3 flex items-center justify-between">
+                    <span>{plan.name} Privileges</span>
+                    <span className="text-[#ff4612] text-sm">₹{plan.monthlyPrice}/mo</span>
+                  </h4>
+                  <ul className="space-y-2 text-xs text-gray-300">
+                    {plan.features.map((f, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <Check className="w-3.5 h-3.5 text-[#ff4612] shrink-0 mt-0.5" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeContent>
             ))}
           </div>
 
@@ -220,38 +229,40 @@ export const MembershipPage = () => {
             subtitle="Everything you need to know about agreements, freezing, cancellations, and amenities."
           />
 
-          <div className="space-y-3">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaqIndex === index;
-              return (
-                <div
-                  key={index}
-                  className="rounded-xl bg-[#111116] border border-white/10 overflow-hidden transition-colors"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaqIndex(isOpen ? null : index)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+          <FadeContent blur={true} duration={800} threshold={0.1}>
+            <div className="space-y-3">
+              {faqs.map((faq, index) => {
+                const isOpen = openFaqIndex === index;
+                return (
+                  <div
+                    key={index}
+                    className="rounded-xl bg-[#111116] border border-white/10 overflow-hidden transition-colors"
                   >
-                    <span className="font-heading font-bold text-sm sm:text-base text-white">
-                      {faq.q}
-                    </span>
-                    <ChevronDown
-                      className={`w-5 h-5 text-[#ff4612] shrink-0 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaqIndex(isOpen ? null : index)}
+                      className="w-full p-5 text-left flex items-center justify-between gap-4 focus:outline-none"
+                    >
+                      <span className="font-heading font-bold text-sm sm:text-base text-white">
+                        {faq.q}
+                      </span>
+                      <ChevronDown
+                        className={`w-5 h-5 text-[#ff4612] shrink-0 transition-transform duration-200 ${
+                          isOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
 
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-3 animate-in fade-in duration-150">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                    {isOpen && (
+                      <div className="px-5 pb-5 text-xs sm:text-sm text-gray-400 leading-relaxed border-t border-white/5 pt-3 animate-in fade-in duration-150">
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </FadeContent>
         </div>
       </section>
 

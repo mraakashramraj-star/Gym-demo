@@ -23,6 +23,16 @@
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     letter-spacing: -0.02em;
   }
+
+  .font-athletic {
+    font-family: 'Barlow Condensed', 'Bebas Neue', sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-bebas {
+    font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.02em;
+  }
 }
 
 /* Custom Glassmorphism & UI Panels */

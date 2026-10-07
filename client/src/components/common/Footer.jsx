@@ -5,6 +5,7 @@ import { InstagramIcon, FacebookIcon, YoutubeIcon, LinkedinIcon } from './Social
 import { gymConfig } from '../../config/gymConfig.js';
 import { api } from '../../services/api.js';
 import { useToast } from '../../context/ToastContext.jsx';
+import Magnet from './Magnet.jsx';
 
 export const Footer = () => {
   const [email, setEmail] = useState('');
@@ -70,42 +71,50 @@ export const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex items-center gap-3 pt-2">
-              <a
-                href={gymConfig.socials.instagram}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
-              >
-                <InstagramIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={gymConfig.socials.facebook}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Facebook"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
-              >
-                <FacebookIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={gymConfig.socials.youtube}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="YouTube"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
-              >
-                <YoutubeIcon className="w-4 h-4" />
-              </a>
-              <a
-                href={gymConfig.socials.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="LinkedIn"
-                className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
-              >
-                <LinkedinIcon className="w-4 h-4" />
-              </a>
+              <Magnet padding={35} magnetStrength={2.5}>
+                <a
+                  href={gymConfig.socials.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
+                >
+                  <InstagramIcon className="w-4 h-4" />
+                </a>
+              </Magnet>
+              <Magnet padding={35} magnetStrength={2.5}>
+                <a
+                  href={gymConfig.socials.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Facebook"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
+                >
+                  <FacebookIcon className="w-4 h-4" />
+                </a>
+              </Magnet>
+              <Magnet padding={35} magnetStrength={2.5}>
+                <a
+                  href={gymConfig.socials.youtube}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
+                >
+                  <YoutubeIcon className="w-4 h-4" />
+                </a>
+              </Magnet>
+              <Magnet padding={35} magnetStrength={2.5}>
+                <a
+                  href={gymConfig.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="w-9 h-9 rounded-lg bg-white/5 hover:bg-[#ff4612] hover:text-white flex items-center justify-center text-gray-400 transition-all duration-200"
+                >
+                  <LinkedinIcon className="w-4 h-4" />
+                </a>
+              </Magnet>
             </div>
           </div>
 
@@ -181,14 +190,16 @@ export const Footer = () => {
                     className="w-full bg-[#111116] border border-white/10 rounded px-3 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-[#ff4612]"
                   />
                 </div>
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="btn-primary text-xs !py-2.5 w-full flex items-center justify-center gap-2"
-                >
-                  {loading ? 'Subscribing...' : 'Subscribe'}
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
+                <Magnet padding={40} magnetStrength={3} wrapperClassName="w-full" innerClassName="w-full" style={{ width: '100%' }}>
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="btn-primary text-xs !py-2.5 w-full flex items-center justify-center gap-2"
+                  >
+                    {loading ? 'Subscribing...' : 'Subscribe'}
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </Magnet>
               </form>
             )}
           </div>

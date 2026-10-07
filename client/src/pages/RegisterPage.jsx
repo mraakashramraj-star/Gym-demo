@@ -4,6 +4,7 @@ import { Lock, Mail, User, Phone, Dumbbell, AlertCircle, ArrowRight } from 'luci
 import { useAuth } from '../context/AuthContext.jsx';
 import { useToast } from '../context/ToastContext.jsx';
 import { gymConfig } from '../config/gymConfig.js';
+import FadeContent from '../components/common/FadeContent.jsx';
 
 export const RegisterPage = () => {
   const [formData, setFormData] = useState({
@@ -67,7 +68,8 @@ export const RegisterPage = () => {
 
   return (
     <div className="min-h-screen bg-[#08080a] flex items-center justify-center p-4 pt-24 pb-16">
-      <div className="max-w-md w-full bg-[#111116] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
+      <FadeContent blur={true} duration={800} threshold={0.1} className="max-w-md w-full">
+        <div className="w-full bg-[#111116] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl">
         
         <div className="text-center mb-6">
           <Link to="/" className="inline-flex items-center gap-2 mb-3">
@@ -202,7 +204,8 @@ export const RegisterPage = () => {
           </Link>
         </div>
 
-      </div>
+        </div>
+      </FadeContent>
     </div>
   );
 };

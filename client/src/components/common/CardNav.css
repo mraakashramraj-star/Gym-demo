@@ -1,0 +1,334 @@
+.card-nav-container {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 860px;
+  z-index: 100;
+  box-sizing: border-box;
+  pointer-events: auto;
+}
+
+.card-nav {
+  display: block;
+  height: 60px;
+  padding: 0;
+  background-color: #0b0b10;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 60, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  will-change: height;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-nav.open {
+  border-color: rgba(255, 60, 0, 0.35);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 60, 0, 0.25);
+}
+
+.card-nav-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.65rem 0.55rem 0.75rem;
+  z-index: 2;
+}
+
+.hamburger-menu {
+  width: 44px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 6px;
+  padding: 0;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  z-index: 10;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 60, 0, 0.5);
+  box-shadow: 0 0 16px rgba(255, 60, 0, 0.25);
+  transform: translateY(-1px);
+}
+
+.hamburger-menu:active {
+  transform: scale(0.95);
+}
+
+.hamburger-menu:focus-visible {
+  border-color: #ff3c00;
+  box-shadow: 0 0 0 2px rgba(255, 60, 0, 0.45);
+}
+
+.hamburger-menu.open {
+  background: rgba(255, 60, 0, 0.15);
+  border-color: rgba(255, 60, 0, 0.55);
+  box-shadow: 0 0 14px rgba(255, 60, 0, 0.2);
+}
+
+.hamburger-line {
+  width: 22px;
+  height: 2px;
+  background-color: currentColor;
+  transition:
+    transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.2s ease;
+  transform-origin: center;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.hamburger-menu.open .hamburger-line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.hamburger-menu.open .hamburger-line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.logo-container:focus,
+.logo-container:focus-visible,
+.logo-container:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  display: block;
+  mix-blend-mode: screen;
+}
+
+.card-nav-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+}
+
+.card-nav-cta-button {
+  background-color: #ff3c00;
+  color: white;
+  border: none;
+  border-radius: 0.65rem;
+  padding: 0 1.25rem;
+  height: 100%;
+  font-weight: 700;
+  font-size: 0.825rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(255, 60, 0, 0.3);
+}
+
+.card-nav-cta-button:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 60, 0, 0.45);
+}
+
+.card-nav-cta-button:active {
+  transform: translateY(0);
+}
+
+.card-nav-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 60px;
+  bottom: 0;
+  padding: 0.6rem 0.65rem 0.65rem;
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-nav.open .card-nav-content {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.nav-card {
+  height: 100%;
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 18px;
+  gap: 12px;
+  user-select: none;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-card-label {
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+.nav-card-links {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nav-card-link {
+  font-size: 0.925rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.nav-card-link:hover {
+  opacity: 1;
+  transform: translateX(3px);
+  color: #ff5500;
+}
+
+.nav-card-link-icon {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.2s ease;
+}
+
+.nav-card-link:hover .nav-card-link-icon {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 768px) {
+  .card-nav-container {
+    width: 94%;
+    top: 0.75rem;
+  }
+
+  .card-nav-top {
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hamburger-menu {
+    order: 1;
+    position: relative;
+    z-index: 10;
+  }
+
+  .logo-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    order: 2;
+    z-index: 5;
+    pointer-events: auto;
+  }
+
+  .logo {
+    height: 26px;
+  }
+
+  .card-nav-cta-group {
+    order: 3;
+    position: relative;
+    z-index: 10;
+  }
+
+  .card-nav-cta-button {
+    padding: 0 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .card-nav-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 0.5rem;
+    bottom: 0;
+    justify-content: flex-start;
+  }
+
+  .nav-card {
+    height: auto;
+    min-height: 80px;
+    flex: 1 1 auto;
+    max-height: none;
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .nav-card-label {
+    font-size: 1rem;
+  }
+
+  .nav-card-link {
+    font-size: 0.875rem;
+  }
+}

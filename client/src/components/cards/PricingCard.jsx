@@ -1,6 +1,8 @@
 import React from 'react';
 import { Check, X, Sparkles, ArrowRight } from 'lucide-react';
 import { gymConfig } from '../../config/gymConfig.js';
+import FadeContent from '../common/FadeContent.jsx';
+import Magnet from '../common/Magnet.jsx';
 
 export const PricingCard = ({ plan, billingCycle = 'monthly', onSelectPlan }) => {
   const isAnnual = billingCycle === 'annual';
@@ -8,13 +10,14 @@ export const PricingCard = ({ plan, billingCycle = 'monthly', onSelectPlan }) =>
   const isPopular = plan.popular;
 
   return (
-    <div
-      className={`relative rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 ${
-        isPopular
-          ? 'bg-[#181822] border-2 border-[#ff4612] shadow-2xl shadow-[#ff4612]/20 lg:-translate-y-2'
-          : 'bg-[#111116] border border-white/10 hover:border-white/20'
-      }`}
-    >
+    <FadeContent blur={true} duration={850} threshold={0.1} initialOpacity={0} className="h-full">
+      <div
+        className={`relative rounded-2xl p-7 flex flex-col justify-between h-full transition-all duration-300 ${
+          isPopular
+            ? 'bg-[#181822] border-2 border-[#ff4612] shadow-2xl shadow-[#ff4612]/20 lg:-translate-y-2'
+            : 'bg-[#111116] border border-white/10 hover:border-white/20'
+        }`}
+      >
       {/* Featured Badge */}
       {isPopular && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#ff5e28] to-[#ff4612] text-white text-[11px] font-black uppercase tracking-widest px-3.5 py-1 rounded-full shadow-lg flex items-center gap-1.5">
@@ -74,20 +77,23 @@ export const PricingCard = ({ plan, billingCycle = 'monthly', onSelectPlan }) =>
 
       {/* CTA Button */}
       <div>
-        <button
-          type="button"
-          onClick={() => onSelectPlan(plan, billingCycle)}
-          className={`w-full py-3 px-6 rounded-lg text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 ${
-            isPopular
-              ? 'btn-primary'
-              : 'btn-outline w-full'
-          }`}
-        >
-          <span>Choose Plan</span>
-          <ArrowRight className="w-4 h-4" />
-        </button>
+        <Magnet padding={40} magnetStrength={3.5} wrapperClassName="w-full" innerClassName="w-full" style={{ width: '100%' }}>
+          <button
+            type="button"
+            onClick={() => onSelectPlan(plan, billingCycle)}
+            className={`w-full py-3 px-6 rounded-lg text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 ${
+              isPopular
+                ? 'btn-primary'
+                : 'btn-outline w-full'
+            }`}
+          >
+            <span>Choose Plan</span>
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </Magnet>
       </div>
 
-    </div>
+      </div>
+    </FadeContent>
   );
 };

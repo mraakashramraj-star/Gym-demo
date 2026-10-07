@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { api } from '../services/api.js';
 import { SectionHeading } from '../components/common/SectionHeading.jsx';
 import { TrainerCard } from '../components/cards/TrainerCard.jsx';
-import { BookingModal } from '../components/common/BookingModal.jsx';
-import { useToast } from '../context/ToastContext.jsx';
 import { useNavigate } from 'react-router-dom';
+import { PageHero } from '../components/common/PageHero.jsx';
+import { Award, Users, Target, Activity } from 'lucide-react';
+import aboutAthlete from '../assets/about_athlete.jpg';
 
 export const TrainersPage = () => {
   const [trainers, setTrainers] = useState([]);
@@ -22,22 +23,22 @@ export const TrainersPage = () => {
   };
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pb-20">
       
       {/* Header Banner */}
-      <section className="relative py-16 bg-[#0a0a0e] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-[#ff4612] bg-[#ff4612]/15 px-3 py-1 rounded border border-[#ff4612]/30 mb-4 inline-block">
-            Elite Performance Coaches
-          </span>
-          <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl text-white uppercase tracking-tight">
-            EXPERT TRAINERS
-          </h1>
-          <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Certified CSCS specialists, physical therapists, and sports dietitians committed to engineering your peak physiological performance.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Elite Performance Coaches"
+        title="EXPERT TRAINERS"
+        breadcrumb="Trainers"
+        subtitle="Certified CSCS specialists, physical therapists, and sports dietitians committed to engineering your peak physiological performance."
+        bgImage={aboutAthlete}
+        highlights={[
+          { label: '100% CSCS & Master Certified', icon: Award },
+          { label: '1-on-1 Personalized Programming', icon: Users },
+          { label: 'Physiological Tracking', icon: Target },
+          { label: 'Injury Rehabilitation', icon: Activity }
+        ]}
+      />
 
       {/* Trainers Grid */}
       <section className="py-16 bg-[#08080a]">

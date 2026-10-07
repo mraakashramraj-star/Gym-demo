@@ -110,7 +110,7 @@ export const CheckoutModal = ({ plan, billingCycle: initialCycle = 'monthly', on
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-in fade-in duration-150">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/85 backdrop-blur-sm animate-in fade-in duration-150">
       <div className="bg-[#111116] border border-white/10 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl overflow-hidden">
         
         {/* Close Button */}

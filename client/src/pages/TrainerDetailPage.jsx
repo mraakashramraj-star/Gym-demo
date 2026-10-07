@@ -13,6 +13,7 @@ import {
 import { api } from '../services/api.js';
 import { ClassCard } from '../components/cards/ClassCard.jsx';
 import { BookingModal } from '../components/common/BookingModal.jsx';
+import FadeContent from '../components/common/FadeContent.jsx';
 
 export const TrainerDetailPage = () => {
   const { slug } = useParams();
@@ -136,38 +137,42 @@ export const TrainerDetailPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             
             {/* Specialties */}
-            <div className="p-6 sm:p-8 bg-[#111116] border border-white/10 rounded-2xl">
-              <h3 className="font-heading font-black text-xl text-white uppercase tracking-tight mb-4 flex items-center gap-2">
-                <Flame className="w-5 h-5 text-[#ff4612]" />
-                Domain Specialties
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {trainer.specialties.map((spec, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-white"
-                  >
-                    {spec}
-                  </span>
-                ))}
+            <FadeContent blur={true} duration={750} threshold={0.1} className="h-full">
+              <div className="p-6 sm:p-8 bg-[#111116] border border-white/10 rounded-2xl h-full">
+                <h3 className="font-heading font-black text-xl text-white uppercase tracking-tight mb-4 flex items-center gap-2">
+                  <Flame className="w-5 h-5 text-[#ff4612]" />
+                  Domain Specialties
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {trainer.specialties.map((spec, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider text-white"
+                    >
+                      {spec}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </FadeContent>
 
             {/* Certifications */}
-            <div className="p-6 sm:p-8 bg-[#111116] border border-white/10 rounded-2xl">
-              <h3 className="font-heading font-black text-xl text-white uppercase tracking-tight mb-4 flex items-center gap-2">
-                <Award className="w-5 h-5 text-amber-400" />
-                Accreditations & Credentials
-              </h3>
-              <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300">
-                {trainer.certifications.map((cert, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>{cert}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <FadeContent blur={true} duration={750} delay={150} threshold={0.1} className="h-full">
+              <div className="p-6 sm:p-8 bg-[#111116] border border-white/10 rounded-2xl h-full">
+                <h3 className="font-heading font-black text-xl text-white uppercase tracking-tight mb-4 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-amber-400" />
+                  Accreditations & Credentials
+                </h3>
+                <ul className="space-y-2.5 text-xs sm:text-sm text-gray-300">
+                  {trainer.certifications.map((cert, i) => (
+                    <li key={i} className="flex items-center gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                      <span>{cert}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeContent>
 
           </div>
         </div>

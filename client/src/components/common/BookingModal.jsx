@@ -53,7 +53,7 @@ export const BookingModal = ({ gymClass, onClose, onBookingSuccess }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-150">
       <div className="bg-[#111116] border border-white/10 rounded-xl max-w-md w-full p-6 relative shadow-2xl overflow-hidden">
         
         {/* Close Button */}

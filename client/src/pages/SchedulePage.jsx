@@ -8,12 +8,17 @@ import {
   Users, 
   Search, 
   CheckCircle2, 
-  AlertCircle 
+  AlertCircle,
+  ShieldCheck,
+  Zap,
+  Sparkles
 } from 'lucide-react';
 import { api } from '../services/api.js';
 import { SectionHeading } from '../components/common/SectionHeading.jsx';
 import { ClassCard } from '../components/cards/ClassCard.jsx';
 import { BookingModal } from '../components/common/BookingModal.jsx';
+import { PageHero } from '../components/common/PageHero.jsx';
+import heroAthlete from '../assets/hero_athlete.jpg';
 
 export const SchedulePage = () => {
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
@@ -45,58 +50,58 @@ export const SchedulePage = () => {
   }, [selectedDay, selectedCategory]);
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pb-20">
       
       {/* Header Banner */}
-      <section className="relative py-16 bg-[#0a0a0e] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-[#ff4612] bg-[#ff4612]/15 px-3 py-1 rounded border border-[#ff4612]/30 mb-4 inline-block">
-            Weekly Timetable & Live Availability
-          </span>
-          <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl text-white uppercase tracking-tight">
-            CLASS SCHEDULE
-          </h1>
-          <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Reserve your session up to 7 days in advance. Real-time slot reservation prevents over-crowding and guarantees your spot.
-          </p>
-
-          {/* Days of Week Tab Bar */}
-          <div className="flex items-center justify-center overflow-x-auto gap-2 mt-8 pb-2 max-w-5xl mx-auto no-scrollbar">
-            {days.map((day) => (
-              <button
-                key={day}
-                type="button"
-                onClick={() => setSelectedDay(day)}
-                className={`px-4 sm:px-5 py-2.5 rounded-lg text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all ${
-                  selectedDay === day
-                    ? 'bg-[#ff4612] text-white shadow-lg shadow-[#ff4612]/30 scale-105'
-                    : 'bg-[#14141b] text-gray-400 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                {day}
-              </button>
-            ))}
-          </div>
-
-          {/* Category Filter Pills */}
-          <div className="flex items-center justify-center flex-wrap gap-2 mt-4 max-w-4xl mx-auto">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                type="button"
-                onClick={() => setSelectedCategory(cat)}
-                className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full transition-colors ${
-                  selectedCategory === cat
-                    ? 'bg-white text-black font-black'
-                    : 'bg-white/5 text-gray-400 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      <PageHero
+        badge="Weekly Timetable & Live Availability"
+        title="CLASS SCHEDULE"
+        breadcrumb="Schedule"
+        subtitle="Reserve your session up to 7 days in advance. Real-time slot reservation prevents over-crowding and guarantees your spot."
+        bgImage={heroAthlete}
+        highlights={[
+          { label: '7-Day Advance Booking', icon: Clock },
+          { label: 'Live Slot Availability', icon: Zap },
+          { label: 'Zero Overcrowding', icon: ShieldCheck },
+          { label: '24/7 Floor Access', icon: Sparkles }
+        ]}
+      >
+        {/* Days of Week Tab Bar */}
+        <div className="flex items-center justify-center overflow-x-auto gap-2 pb-2 max-w-5xl mx-auto no-scrollbar">
+          {days.map((day) => (
+            <button
+              key={day}
+              type="button"
+              onClick={() => setSelectedDay(day)}
+              className={`px-4 sm:px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-wider whitespace-nowrap transition-all ${
+                selectedDay === day
+                  ? 'bg-[#ff4612] text-white shadow-lg shadow-[#ff4612]/30 scale-105'
+                  : 'bg-[#14141b]/80 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              {day}
+            </button>
+          ))}
         </div>
-      </section>
+
+        {/* Category Filter Pills */}
+        <div className="flex items-center justify-center flex-wrap gap-2 mt-4 max-w-4xl mx-auto">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              type="button"
+              onClick={() => setSelectedCategory(cat)}
+              className={`text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full transition-all ${
+                selectedCategory === cat
+                  ? 'bg-white text-black font-black shadow-md'
+                  : 'bg-white/5 border border-white/5 text-gray-400 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+      </PageHero>
 
       {/* Classes Grid */}
       <section className="py-16 bg-[#08080a]">

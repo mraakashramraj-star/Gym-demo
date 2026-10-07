@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollFloat from './ScrollFloat.jsx';
 
 export const SectionHeading = ({
   badge,
@@ -17,9 +18,19 @@ export const SectionHeading = ({
           {badge}
         </div>
       )}
-      <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight leading-tight">
+      <ScrollFloat
+        containerClassName="leading-tight"
+        textClassName={`font-heading font-black text-3xl sm:text-4xl md:text-5xl text-white uppercase tracking-tight leading-tight ${
+          isCentered ? 'text-center' : 'text-left'
+        }`}
+        animationDuration={1}
+        ease="back.inOut(2)"
+        scrollStart="center bottom+=50%"
+        scrollEnd="bottom bottom-=40%"
+        stagger={0.03}
+      >
         {title}
-      </h2>
+      </ScrollFloat>
       {subtitle && (
         <p className="mt-4 text-gray-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
           {subtitle}

@@ -29,7 +29,7 @@ export const Lightbox = ({ images, activeIndex, onClose, onIndexChange }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-in fade-in duration-200"
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 backdrop-blur-md p-4 animate-in fade-in duration-200"
       onClick={onClose}
     >
       {/* Close Button */}

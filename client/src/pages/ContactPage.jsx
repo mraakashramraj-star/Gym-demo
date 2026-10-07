@@ -10,7 +10,12 @@ import {
 } from 'lucide-react';
 import { gymConfig } from '../config/gymConfig.js';
 import { api } from '../services/api.js';
-import { useToast } from '../context/ToastContext.jsx';
+import { ScrollFloat } from '../components/common/ScrollFloat.jsx';
+import FadeContent from '../components/common/FadeContent.jsx';
+import Magnet from '../components/common/Magnet.jsx';
+import { PageHero } from '../components/common/PageHero.jsx';
+import { MessageSquare, ShieldCheck, Car, Train } from 'lucide-react';
+import contactArnold from '../assets/contact_arnold.jpg';
 
 export const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -76,22 +81,22 @@ export const ContactPage = () => {
   };
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pb-20">
       
       {/* Header Banner */}
-      <section className="relative py-16 bg-[#0a0a0e] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-xs font-black uppercase tracking-widest text-[#ff4612] bg-[#ff4612]/15 px-3 py-1 rounded border border-[#ff4612]/30 mb-4 inline-block">
-            Direct Communication
-          </span>
-          <h1 className="font-heading font-black text-4xl sm:text-6xl md:text-7xl text-white uppercase tracking-tight">
-            CONTACT & LOCATION
-          </h1>
-          <p className="mt-4 text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Have questions regarding facility tours, corporate memberships, or 1-on-1 coaching? Connect with our team.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Direct Communication"
+        title="CONTACT & LOCATION"
+        breadcrumb="Contact Us"
+        subtitle="Have questions regarding facility tours, corporate memberships, or 1-on-1 coaching? Connect with our team."
+        bgImage={contactArnold}
+        highlights={[
+          { label: 'Fast Response Under 2 Hours', icon: MessageSquare },
+          { label: 'Complimentary Day Pass', icon: ShieldCheck },
+          { label: 'Free On-Site Valet Parking', icon: Car },
+          { label: 'Direct Metro Station Access', icon: Train }
+        ]}
+      />
 
       {/* Main Split Content */}
       <section className="py-20 bg-[#08080a]">
@@ -100,68 +105,79 @@ export const ContactPage = () => {
             
             {/* Left Side: Contact Information & Hours */}
             <div className="lg:col-span-5 flex flex-col gap-8">
-              <div>
-                <span className="text-xs font-black uppercase tracking-widest text-[#ff4612] mb-2 block">
-                  Reach Out
-                </span>
-                <h2 className="font-heading font-black text-3xl sm:text-4xl text-white uppercase tracking-tight mb-4">
-                  LET'S GET YOU STARTED.
-                </h2>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  Stop by our front desk for a complimentary tour of the strength deck and recovery suites, or drop us a line below.
-                </p>
-              </div>
+              <FadeContent blur={true} duration={800} threshold={0.1}>
+                <div>
+                  <span className="text-xs font-black uppercase tracking-widest text-[#ff4612] mb-2 block">
+                    Reach Out
+                  </span>
+                  <h2 className="font-heading font-black text-3xl sm:text-4xl text-white uppercase tracking-tight mb-4">
+                    LET'S GET YOU STARTED.
+                  </h2>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    Stop by our front desk for a complimentary tour of the strength deck and recovery suites, or drop us a line below.
+                  </p>
+                </div>
+              </FadeContent>
 
               {/* Info Cards */}
               <div className="space-y-4 text-sm">
-                <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
-                    <MapPin className="w-5 h-5" />
+                <FadeContent blur={true} duration={700} delay={0} threshold={0.1}>
+                  <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4 hover:border-[#ff4612]/40 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white uppercase text-xs">Facility Address</h4>
+                      <p className="text-gray-400 text-xs mt-1 leading-relaxed">{gymConfig.displayDetails.addressFormatted}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white uppercase text-xs">Facility Address</h4>
-                    <p className="text-gray-400 text-xs mt-1 leading-relaxed">{gymConfig.displayDetails.addressFormatted}</p>
-                  </div>
-                </div>
+                </FadeContent>
 
-                <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
-                    <Phone className="w-5 h-5" />
+                <FadeContent blur={true} duration={700} delay={100} threshold={0.1}>
+                  <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4 hover:border-[#ff4612]/40 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white uppercase text-xs">Phone Numbers</h4>
+                      <p className="text-gray-400 text-xs mt-1">{gymConfig.displayDetails.phoneFormatted}</p>
+                      <p className="text-gray-500 text-[11px]">Direct Front Desk & Concierge</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white uppercase text-xs">Phone Numbers</h4>
-                    <p className="text-gray-400 text-xs mt-1">{gymConfig.displayDetails.phoneFormatted}</p>
-                    <p className="text-gray-500 text-[11px]">Direct Front Desk & Concierge</p>
-                  </div>
-                </div>
+                </FadeContent>
 
-                <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
-                    <Mail className="w-5 h-5" />
+                <FadeContent blur={true} duration={700} delay={200} threshold={0.1}>
+                  <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4 hover:border-[#ff4612]/40 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
+                      <Mail className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white uppercase text-xs">Direct Email</h4>
+                      <p className="text-gray-400 text-xs mt-1">{gymConfig.displayDetails.emailFormatted}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white uppercase text-xs">Direct Email</h4>
-                    <p className="text-gray-400 text-xs mt-1">{gymConfig.displayDetails.emailFormatted}</p>
-                  </div>
-                </div>
+                </FadeContent>
 
-                <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
-                    <Clock className="w-5 h-5" />
+                <FadeContent blur={true} duration={700} delay={300} threshold={0.1}>
+                  <div className="p-4 bg-[#111116] border border-white/10 rounded-xl flex items-start gap-4 hover:border-[#ff4612]/40 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-[#ff4612]/15 text-[#ff4612] flex items-center justify-center shrink-0 border border-[#ff4612]/30">
+                      <Clock className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white uppercase text-xs">Operating Hours</h4>
+                      <p className="text-gray-400 text-xs mt-1">Monday – Friday: {gymConfig.displayDetails.hoursWeekday}</p>
+                      <p className="text-gray-400 text-xs">Saturday: {gymConfig.displayDetails.hoursSaturday}</p>
+                      <p className="text-gray-400 text-xs">Sunday: {gymConfig.displayDetails.hoursSunday}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white uppercase text-xs">Operating Hours</h4>
-                    <p className="text-gray-400 text-xs mt-1">Monday – Friday: {gymConfig.displayDetails.hoursWeekday}</p>
-                    <p className="text-gray-400 text-xs">Saturday: {gymConfig.displayDetails.hoursSaturday}</p>
-                    <p className="text-gray-400 text-xs">Sunday: {gymConfig.displayDetails.hoursSunday}</p>
-                  </div>
-                </div>
+                </FadeContent>
               </div>
             </div>
 
             {/* Right Side: Validated Contact Form */}
             <div className="lg:col-span-7">
-              <div className="bg-[#111116] border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
+              <FadeContent blur={true} duration={850} delay={150} threshold={0.1}>
+                <div className="bg-[#111116] border border-white/10 rounded-2xl p-6 sm:p-10 shadow-2xl">
                 <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tight mb-2">
                   Send A Message
                 </h3>
@@ -277,18 +293,21 @@ export const ContactPage = () => {
                       ></textarea>
                     </div>
 
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="btn-primary w-full text-xs !py-3 flex items-center justify-center gap-2 mt-2"
-                    >
-                      <Send className="w-4 h-4" />
-                      {loading ? 'Transmitting Message...' : 'Send Message'}
-                    </button>
+                    <Magnet padding={50} magnetStrength={3} wrapperClassName="w-full" innerClassName="w-full" style={{ width: '100%' }}>
+                      <button
+                        type="submit"
+                        disabled={loading}
+                        className="btn-primary w-full text-xs !py-3 flex items-center justify-center gap-2 mt-2"
+                      >
+                        <Send className="w-4 h-4" />
+                        {loading ? 'Transmitting Message...' : 'Send Message'}
+                      </button>
+                    </Magnet>
                   </form>
                 )}
 
-              </div>
+                </div>
+              </FadeContent>
             </div>
 
           </div>
@@ -298,23 +317,25 @@ export const ContactPage = () => {
       {/* Google Maps Embed Section */}
       <section className="py-12 bg-[#0c0c11] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-80 sm:h-96 relative">
-            <iframe
-              title="Gym Club Location Map"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
-              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=12.9716,77.5946+(APEX%20Athletic%20Club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-              className="filter invert contrast-125 brightness-75 w-full h-full"
-            ></iframe>
-            <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg pointer-events-none">
-              <p className="text-white text-xs font-bold">{gymConfig.name}</p>
-              <p className="text-gray-400 text-[10px]">{gymConfig.displayDetails.addressFormatted}</p>
+          <FadeContent blur={true} duration={800} threshold={0.1}>
+            <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-80 sm:h-96 relative">
+              <iframe
+                title="Gym Club Location Map"
+                width="100%"
+                height="100%"
+                frameBorder="0"
+                scrolling="no"
+                marginHeight="0"
+                marginWidth="0"
+                src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=12.9716,77.5946+(APEX%20Athletic%20Club)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                className="filter invert contrast-125 brightness-75 w-full h-full"
+              ></iframe>
+              <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2 rounded-lg pointer-events-none">
+                <p className="text-white text-xs font-bold">{gymConfig.name}</p>
+                <p className="text-gray-400 text-[10px]">{gymConfig.displayDetails.addressFormatted}</p>
+              </div>
             </div>
-          </div>
+          </FadeContent>
         </div>
       </section>
 

@@ -2,23 +2,23 @@
 // Central single file to edit Gym Name, Tagline, Location, Contact, and Pricing.
 
 export const gymConfig = {
-  // Brand Identity (Use "[GYM NAME]" by default, or brand fallback if desired)
-  name: "[GYM NAME]",
-  brandDisplayName: "APEX ATHLETIC", // High-end visual moniker or "[GYM NAME]"
-  tagline: "TRAIN HARD. LIVE STRONG.",
-  subheading: "Premium training, expert coaching and a community built to help you reach your goals.",
+  // Brand Identity
+  name: "BATRON GYM",
+  brandDisplayName: "BATRON GYM", // High-end visual moniker
+  tagline: "FORGED IN SHADOWS. DEFINED BY POWER.",
+  subheading: "Elite athletic conditioning, high-performance strength training, and an unstoppable community built for champions.",
 
   // Contact Details
   location: "[CITY, STATE]",
   address: "[GYM ADDRESS]",
   phone: "[PHONE NUMBER]",
-  email: "[EMAIL ADDRESS]",
+  email: "contact@batrongym.com",
 
   // Formatted display values (for realistic aesthetic demonstration)
   displayDetails: {
     addressFormatted: "108 Olympic Blvd, Metro Fitness District, [CITY, STATE] 560001",
     phoneFormatted: "+91 98765 43210",
-    emailFormatted: "contact@gymbrand.com",
+    emailFormatted: "contact@batrongym.com",
     hoursWeekday: "05:00 AM — 11:00 PM",
     hoursSaturday: "06:00 AM — 10:00 PM",
     hoursSunday: "07:00 AM — 08:00 PM"

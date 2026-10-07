@@ -182,6 +182,48 @@ export const getSeedData = () => {
       bio: 'Evidence-based nutritionist turning complex bioenergetics into sustainable, delicious, real-world nutrition systems.',
       philosophy: 'You cannot out-train chronic nutritional dysfunction. Fuel for performance and the aesthetic follows.',
       availableDays: ['Monday', 'Tuesday', 'Thursday', 'Friday']
+    },
+    {
+      id: 'trn-07',
+      slug: 'jordan-reed',
+      name: 'Jordan Reed',
+      role: 'Olympic Weightlifting & Cross-Training Coach',
+      experience: '10+ Years',
+      photo: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80',
+      cover: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80',
+      specialties: ['Clean & Jerk Mechanics', 'Snatch Kinematics', 'Barbell Cycling', 'Metabolic Conditioning'],
+      certifications: ['USAW Senior Coach Level 2', 'CrossFit Level 3 Trainer (CCMT)', 'CSCS'],
+      bio: 'Former national Olympic lifting competitor focused on kinetic power output, bar trajectory precision, and ruthless cardiovascular work capacity.',
+      philosophy: 'Master the mechanics before you chase the weight. Technique is the foundation that holds the house of strength.',
+      availableDays: ['Monday', 'Tuesday', 'Thursday', 'Saturday']
+    },
+    {
+      id: 'trn-08',
+      slug: 'samantha-brooks',
+      name: 'Samantha Brooks',
+      role: 'Combat Conditioning & Boxing Master',
+      experience: '8+ Years',
+      photo: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=800&q=80',
+      cover: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80',
+      specialties: ['Boxing Biomechanics', 'Heavy Bag Conditioning', 'Footwork & Agility', 'Rotational Power'],
+      certifications: ['USA Boxing Certified Coach', 'NASM Certified Personal Trainer', 'Kettlebell Athletics Specialist'],
+      bio: 'Golden Gloves competitor turned conditioning coach, building fighters and everyday athletes with sharp boxing mechanics and unbreakable stamina.',
+      philosophy: 'In the ring and in life, composure under fire wins every battle. Channel your inner fire with surgical discipline.',
+      availableDays: ['Tuesday', 'Wednesday', 'Friday', 'Sunday']
+    },
+    {
+      id: 'trn-09',
+      slug: 'liam-gallagher',
+      name: 'Liam Gallagher',
+      role: 'Calisthenics & Gymnastic Strength Specialist',
+      experience: '7+ Years',
+      photo: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=800&q=80',
+      cover: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=80',
+      specialties: ['Ring & Bar Calisthenics', 'Scapular Control', 'Handstand Balance', 'Tendon Conditioning'],
+      certifications: ['WSWCF Master Calisthenics Trainer', 'GymnasticBodies Certified Coach', 'FMS Level 2'],
+      bio: 'Specialist in relative bodyweight leverage, tendon resilience, and gymnastic strength progression. Teaches athletes total control over their physical vessel.',
+      philosophy: 'Before you demand power from the barbell, command mastery over your own gravity. Control begins from the fingertips down.',
+      availableDays: ['Monday', 'Wednesday', 'Friday', 'Saturday']
     }
   ];
 
@@ -975,6 +1017,192 @@ When you head to the gym and try to squat heavy without addressing this, your pe
 3. **Half-Kneeling Couch Stretch**: Lengthens the quad and hip flexor with active glute contraction.
 4. **Cat-Cow with Breath Sync**: Gently mobilizes every spinal segment.
       `
+    },
+    {
+      id: 'post-05',
+      slug: 'compound-vs-isolation-hypertrophy',
+      title: 'Compound vs Isolation Movements: The Optimal Training Ratio',
+      category: 'Workout',
+      author: 'David Kovacs',
+      date: 'August 18, 2026',
+      readTime: '7 min read',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'Should your workout consist of heavy multi-joint movements or targeted isolation machines? The optimal split for maximum muscle stimulus.',
+      content: `
+### The Great Barbell vs Machine Debate
+
+For decades, purists argued that the barbell squat, bench press, and deadlift were all you ever needed. On the flip side, aesthetic bodybuilders frequently extol the virtues of cable cross-overs, leg extensions, and preacher curls.
+
+Modern biomechanical analyses reveal that neither extreme is ideal. Maximum hypertrophic stimulation occurs when both modalities are sequenced strategically.
+
+### The 70/30 Golden Rule
+1. **70% Compound Multi-Joint Movements**: Squats, Romanian Deadlifts, Overhead Presses, Pull-ups, and Barbell Rows recruit the highest number of motor units and release systemic growth hormones.
+2. **30% Single-Joint Isolation Work**: Lateral raises, incline dumbbell curls, and tricep overhead extensions eliminate stabilizer fatigue and directly load target muscle bellies at peak mechanical tension.
+
+### Exercise Order Matters
+Always perform compound exercises at the beginning of your training session when central nervous system freshness is highest. Transition into isolation work as metabolic fatigue accumulates.
+      `
+    },
+    {
+      id: 'post-06',
+      slug: 'peri-workout-fueling-guide',
+      title: 'The Peri-Workout Nutrition Protocol: Pre, Intra, and Post-Fueling',
+      category: 'Nutrition',
+      author: 'Elena Rostova, RD',
+      date: 'August 14, 2026',
+      readTime: '6 min read',
+      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'What you consume 90 minutes before lifting and during intense sessions directly dictates pump, power output, and cognitive drive.',
+      content: `
+### Fueling the Kinetic Machine
+
+Entering a high-intensity session depleted of muscle glycogen results in early muscular burn, reduced set volume, and elevated cortisol. By structuring your peri-workout nutrients, you can double your high-velocity work capacity.
+
+### The 3 Stages of Workout Fueling
+
+1. **Pre-Workout (60-90 minutes prior)**: 30-40g low-glycemic complex carbohydrates (oatmeal, rice cakes, banana) paired with 25g fast-digesting protein and 500ml water with a pinch of sea salt.
+2. **Intra-Workout (for sessions exceeding 60 mins)**: Electrolytes with 20g cyclic dextrin or coconut water to sustain cellular hydration and prevent intra-muscular cramping.
+3. **Post-Workout (within 2 hours)**: High biological value protein (whey isolate or chicken breast) combined with starch to rapidly replenish depleted hepatic and intramuscular glycogen stores.
+      `
+    },
+    {
+      id: 'post-07',
+      slug: 'cold-plunge-vs-sauna-hormesis',
+      title: 'Contrast Therapy Demystified: Cold Plunges vs Infrared Sauna',
+      category: 'Recovery',
+      author: 'Marcus Chen, DPT',
+      date: 'August 06, 2026',
+      readTime: '6 min read',
+      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'When should you cold plunge, and when will it blunt your hypertrophy gains? The science of thermal stress adaptation.',
+      content: `
+### Thermal Hormesis: Stressing to Rebuild
+
+Both hyperthermic exposure (saunas) and hypothermic exposure (ice baths) stimulate potent cellular repair pathways via heat shock proteins and norepinephrine surges. However, their timing is paramount.
+
+### When to Cold Plunge
+- **The Caveat**: Do NOT take an ice bath within 4 hours after a hypertrophy lifting session. The acute inflammation triggered by lifting is the essential biochemical signal that initiates muscle fiber growth. Quenching it blunts muscle gains.
+- **The Ideal Window**: Use cold water immersion (3-5 minutes at 10°C) on active rest days or before cardio sessions to elevate dopamine and clear central fatigue.
+
+### When to Sauna
+- 20 minutes in an infrared sauna at 80°C post-lifting enhances nitric oxide circulation, clears metabolic waste, and mimics light cardiovascular conditioning.
+      `
+    },
+    {
+      id: 'post-08',
+      slug: 'psychology-of-consistency',
+      title: 'The Psychology of Consistency: How to Train When Motivation Fades',
+      category: 'Lifestyle',
+      author: 'Alex Vance',
+      date: 'July 28, 2026',
+      readTime: '5 min read',
+      image: 'https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'Motivation is a fickle emotional state; discipline is a trained neurological habit. Here is the behavioral architecture of high performers.',
+      content: `
+### Motivation Is An Emotion, Not A Strategy
+
+Anyone can show up to the gym on a sunny morning when feeling energetic, well-fed, and inspired. The athletes who undergo true bodily transformations are the ones who cross the gym threshold when it is dark, raining, and work was exhausting.
+
+### 3 Rules for Unshakable Habit Loops
+
+1. **Lower the Friction of Initiation**: Pack your gym bag, lay out your lifting shoes, and prep your water bottle the night before.
+2. **The "Two-Minute Rule"**: Tell yourself you only need to show up and warm up for 5 minutes. 95% of the time, once you begin moving, momentum carries you through the full session.
+3. **Never Miss Twice**: A missed session is a bump in the road. Two consecutive missed sessions is the beginning of a new, destructive habit.
+      `
+    },
+    {
+      id: 'post-09',
+      slug: 'vo2-max-longevity-biomarker',
+      title: 'VO2 Max: The Single Most Critical Biomarker for Cardiovascular Longevity',
+      category: 'Fitness',
+      author: 'Alex Vance',
+      date: 'July 15, 2026',
+      readTime: '6 min read',
+      image: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'High VO2 max is linked to a 400% reduction in all-cause mortality compared to low cardiorespiratory fitness. How to train it efficiently.',
+      content: `
+### What Is VO2 Max?
+
+VO2 max measures the maximal volume of oxygen your body can transport and utilize during peak aerobic exertion. While often treated as a stat for marathon runners, peer-reviewed clinical data shows it is the single strongest physiological predictor of healthspan and longevity.
+
+### The Norwegian 4x4 Protocol
+The gold standard for rapid VO2 max improvement is the Norwegian 4x4 method:
+- 4-minute intervals at 90-95% of maximum heart rate (you can only speak in 1-word gasps).
+- 3 minutes of active recovery (light jog or brisk walk).
+- Repeat for 4 total rounds once or twice per week.
+
+Incorporating just one VO2 max session alongside resistance training produces radical cardiovascular resilience.
+      `
+    },
+    {
+      id: 'post-10',
+      slug: 'functional-core-anti-rotation',
+      title: 'The Anti-Core Revolution: Why Endless Crunches Fail Athletes',
+      category: 'Fitness',
+      author: 'Maya Patel',
+      date: 'July 04, 2026',
+      readTime: '5 min read',
+      image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'Your core was anatomically designed to resist motion and protect your spine, not repeatedly flex it. The exercises you should be doing instead.',
+      content: `
+### The True Function of the Abdominal Wall
+
+The human spine is not designed to perform hundreds of repetitive spinal flexion cycles under load (such as weighted crunches or sit-ups). Anatomically, the primary purpose of the core musculature (transverse abdominis, internal/external obliques, and erectors) is **anti-motion**:
+
+1. **Anti-Extension**: Resisting spinal hyperextension (Ab-wheel rollouts, hollow body holds).
+2. **Anti-Rotation**: Resisting twisting under load (Pallof presses, bird-dogs).
+3. **Anti-Lateral Flexion**: Resisting sideways tilting (Suitcase carries, side planks).
+
+By training your core to stabilize against external loads, you dramatically boost your squat, sprint speed, and protect your lumbar vertebrae for life.
+      `
+    },
+    {
+      id: 'post-11',
+      slug: 'vikram-transformation-journey',
+      title: "From Chronic Lower Back Pain to a 210kg Deadlift: Vikram's 18-Month Story",
+      category: 'Success Stories',
+      author: 'Marcus Chen, DPT',
+      date: 'June 20, 2026',
+      readTime: '5 min read',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'After an L5-S1 disc herniation left him unable to tie his shoes, Vikram teamed up with our physiotherapy and coaching staff to rebuild from zero.',
+      content: `
+### The Starting Point: Crippling Back Pain
+
+When Vikram, a 34-year-old software architect, first walked through our doors, he had been dealing with chronic sciatica for nearly two years. "I thought my days of lifting anything heavier than a grocery bag were over," he recalled.
+
+### The Rebuilding Protocol
+1. **Phase 1: Pelvic Neutrality & Glute Recruitment**: We eliminated all loaded spinal movements for the first 8 weeks, focusing entirely on McGill Big 3 drills and restorative hip mobility with Coach Sarah.
+2. **Phase 2: Hip Hinge Kinematics**: Coach David introduced kettlebell deadlifts from elevated blocks, teaching Vikram to recruit his posterior chain rather than his lumbar spine.
+3. **Phase 3: Progressive Overload**: Over 18 months of strict, disciplined training, Vikram added micro-plates each week.
+
+### The Triumphant Milestone
+Last month, during our Summer Lifting Meet, Vikram pulled a pristine, competition-depth **210 kg deadlift** with zero pain. "This gym did not just fix my back; they taught me how to trust my body again."
+      `
+    },
+    {
+      id: 'post-12',
+      slug: 'ananya-career-and-fitness-balance',
+      title: "How Ananya Shredded 14kg & Built Peak Energy While Working 60-Hour Weeks",
+      category: 'Success Stories',
+      author: 'Alex Vance',
+      date: 'June 05, 2026',
+      readTime: '6 min read',
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
+      excerpt: 'A demanding corporate management role left Ananya exhausted and reaching for sugar. Here is how structured 45-minute sessions turned her health around.',
+      content: `
+### Breaking The Corporate Burnout Loop
+
+Ananya was working 60+ hours a week as a product director. Late meetings, airport travel, and takeout meals had caused her weight to creep up by 16kg while her sleep quality hit rock bottom.
+
+### The Sustainable Blueprint
+- **Time-Constrained Training**: Instead of unrealistic 2-hour gym routines, Coach Alex programmed three 45-minute full-body sessions per week focusing on high-density circuits.
+- **Nutritional Structure without Deprivation**: Sports Dietitian Elena Rostova set up a meal-prep framework with simple 30g protein targets per meal, removing the stress of macro counting.
+- **Stress Down-Regulation**: Attending Sarah's Sunday Restorative Yoga class normalized cortisol levels and restored deep Stage 3 sleep.
+
+### The Outcome
+In 9 months, Ananya lost 14 kg of pure fat, improved her resting heart rate from 78 to 58 bpm, and completed her first unassisted chin-up. "Fitness is no longer a chore on my calendar; it is the anchor that powers my entire professional day."
+      `
     }
   ];
 
@@ -1067,6 +1295,118 @@ When you head to the gym and try to squat heavy without addressing this, your pe
       category: 'Community',
       image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80',
       description: 'Celebrating personal records and supporting team progress.'
+    },
+    {
+      id: 'gal-09',
+      title: 'Sports Science Cryo & Compression Lounge',
+      category: 'Facility',
+      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+      description: 'Normatec compression boots and specialized recovery recliners for post-session down-regulation.'
+    },
+    {
+      id: 'gal-10',
+      title: 'Executive Locker Suites & Rain Showers',
+      category: 'Facility',
+      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80',
+      description: 'Italian marble vanity stations, private rainfall showers, and electronic biometric lockers.'
+    },
+    {
+      id: 'gal-12',
+      title: 'Dumbbell Battery Up To 65kg',
+      category: 'Equipment',
+      image: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=1200&q=80',
+      description: 'Full urethane dumbbell deck with twin incline benches and spotter platforms.'
+    },
+    {
+      id: 'gal-14',
+      title: 'Concept2 Row & SkiErg Battery',
+      category: 'Equipment',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80',
+      description: 'Synchronized cardiovascular ergometers for testing metabolic output and threshold power.'
+    },
+    {
+      id: 'gal-15',
+      title: 'Olympic Clean & Jerk Technique Session',
+      category: 'Training',
+      image: 'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1200&q=80',
+      description: 'Athletes fine-tuning the triple extension and explosive catch under professional eyes.'
+    },
+    {
+      id: 'gal-16',
+      title: 'Heavy Barbell Compound Squats',
+      category: 'Training',
+      image: 'https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?auto=format&fit=crop&w=1200&q=80',
+      description: 'Progressive overload training with competition bumper plates and calibrated collars.'
+    },
+    {
+      id: 'gal-17',
+      title: 'Combat Boxing Heavy Bag Drill',
+      category: 'Training',
+      image: 'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=1200&q=80',
+      description: 'High-frequency strike combinations and rotational agility under strobe training lights.'
+    },
+    {
+      id: 'gal-18',
+      title: 'Rhythm Wave Studio Zumba & Dance',
+      category: 'Classes',
+      image: 'https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=1200&q=80',
+      description: 'High-energy studio session blending syncopated Latin rhythms with intense cardio conditioning.'
+    },
+    {
+      id: 'gal-19',
+      title: 'Functional Kettlebell Movement Group',
+      category: 'Classes',
+      image: 'https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=1200&q=80',
+      description: 'Synchronized team swings, snatches, and Turkish get-ups developing athletic hips.'
+    },
+    {
+      id: 'gal-20',
+      title: 'Morning Sun Vinyasa Breathwork Flow',
+      category: 'Classes',
+      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80',
+      description: 'Opening thoracic mobility and centering nervous system readiness for the day ahead.'
+    },
+    {
+      id: 'gal-21',
+      title: 'Summer Strongman Invitational',
+      category: 'Events',
+      image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=80',
+      description: 'Local and regional athletes battling through farmer carries and log presses.'
+    },
+    {
+      id: 'gal-22',
+      title: '5K Sunrise Community River Run',
+      category: 'Events',
+      image: 'https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=1200&q=80',
+      description: 'Over 120 members and coaches taking to the riverside track for our annual charity run.'
+    },
+    {
+      id: 'gal-23',
+      title: 'Barbell Kinematics & Nutrition Seminar',
+      category: 'Events',
+      image: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1200&q=80',
+      description: 'Interactive educational workshop breaking down squat biomechanics and meal timing.'
+    },
+    {
+      id: 'gal-24',
+      title: 'Post-Workout Fuel & Lounge Hangouts',
+      category: 'Community',
+      image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&q=80',
+      description: 'Members unwinding at the juice bar sharing training advice and weekly wins.'
+    },
+    {
+      id: 'gal-25',
+      title: 'Partner Training Grit & Accountability',
+      category: 'Community',
+      image: 'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=1200&q=80',
+      description: 'Pushing each other through the final grueling reps of Saturday conditioning.'
+    },
+    {
+      id: 'gal-26',
+      title: 'Annual Member Transformation Honors Gala',
+      category: 'Community',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80',
+      description: 'Recognizing outstanding dedication, physical metamorphoses, and inspiring community spirits.'
     }
   ];
 

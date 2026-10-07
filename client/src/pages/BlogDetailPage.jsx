@@ -13,6 +13,8 @@ import { TwitterIcon } from '../components/common/SocialIcons.jsx';
 import { api } from '../services/api.js';
 import { BlogCard } from '../components/cards/BlogCard.jsx';
 import { useToast } from '../context/ToastContext.jsx';
+import { gymConfig } from '../config/gymConfig.js';
+import FadeContent from '../components/common/FadeContent.jsx';
 
 export const BlogDetailPage = () => {
   const { slug } = useParams();
@@ -42,7 +44,7 @@ export const BlogDetailPage = () => {
   };
 
   const handleShareTwitter = () => {
-    const text = encodeURIComponent(`Reading "${post?.title}" on [GYM NAME] Fitness Blog:`);
+    const text = encodeURIComponent(`Reading "${post?.title}" on ${gymConfig.name} Fitness Blog:`);
     const url = encodeURIComponent(window.location.href);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
   };
@@ -161,15 +163,17 @@ export const BlogDetailPage = () => {
         </div>
 
         {/* Author Bio Box */}
-        <div className="mt-14 p-6 rounded-xl bg-[#111116] border border-white/10 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-[#ff4612] flex items-center justify-center text-white font-black text-lg">
-            {post.author.charAt(0)}
+        <FadeContent blur={true} duration={800} threshold={0.1}>
+          <div className="mt-14 p-6 rounded-xl bg-[#111116] border border-white/10 flex items-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-[#ff4612] flex items-center justify-center text-white font-black text-lg">
+              {post.author.charAt(0)}
+            </div>
+            <div>
+              <h4 className="font-heading font-black text-base text-white uppercase">{post.author}</h4>
+              <p className="text-xs text-gray-400 mt-0.5">Performance Editorial Staff & Athletic Director at {gymConfig.name}.</p>
+            </div>
           </div>
-          <div>
-            <h4 className="font-heading font-black text-base text-white uppercase">{post.author}</h4>
-            <p className="text-xs text-gray-400 mt-0.5">Performance Editorial Staff & Athletic Director at [GYM NAME].</p>
-          </div>
-        </div>
+        </FadeContent>
 
       </article>
 

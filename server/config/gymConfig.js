@@ -2,11 +2,11 @@
 // Easily edit gym branding, contact details, working hours, and pricing tiers here.
 
 export const gymConfig = {
-  // Brand Identity (Default placeholder as requested)
-  name: process.env.GYM_NAME || "[GYM NAME]",
-  brandFallback: "IRONPULSE ATHLETIC CLUB",
-  tagline: "TRAIN HARD. LIVE STRONG.",
-  subheading: "Premium training, expert coaching and a community built to help you reach your goals.",
+  // Brand Identity
+  name: process.env.GYM_NAME || "BATRON GYM",
+  brandFallback: "BATRON GYM",
+  tagline: "FORGED IN SHADOWS. DEFINED BY POWER.",
+  subheading: "Elite athletic conditioning, high-performance strength training, and an unstoppable community built for champions.",
   
   // Contact & Location
   location: "[CITY, STATE]",

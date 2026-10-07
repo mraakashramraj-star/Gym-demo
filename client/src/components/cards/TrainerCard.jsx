@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Award, ArrowRight, Sparkles } from 'lucide-react';
+import FadeContent from '../common/FadeContent.jsx';
 
 export const TrainerCard = ({ trainer, onBookSession }) => {
   return (
-    <div className="group bg-[#111116] border border-white/10 rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-[#ff4612]/50 hover:shadow-2xl hover:shadow-[#ff4612]/15">
+    <FadeContent blur={true} duration={800} threshold={0.1} initialOpacity={0} className="h-full">
+      <div className="group bg-[#111116] border border-white/10 rounded-xl overflow-hidden flex flex-col justify-between h-full transition-all duration-300 hover:border-[#ff4612]/50 hover:shadow-2xl hover:shadow-[#ff4612]/15">
       
       {/* Trainer Image Container */}
       <div className="relative h-72 sm:h-80 overflow-hidden bg-zinc-900">
@@ -71,6 +73,7 @@ export const TrainerCard = ({ trainer, onBookSession }) => {
 
       </div>
 
-    </div>
+      </div>
+    </FadeContent>
   );
 };
